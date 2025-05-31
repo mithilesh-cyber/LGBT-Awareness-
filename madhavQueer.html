@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madav Queer Restro - Your Safe Space in Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+primary:'#7C3AED',
+secondary:'#F59E0B'
+},
+borderRadius:{
+'none':'0px',
+'sm':'4px',
+DEFAULT:'8px',
+'md':'12px',
+'lg':'16px',
+'xl':'20px',
+'2xl':'24px',
+'3xl':'32px',
+'full':'9999px',
+'button':'8px'
+}
+},
+fontFamily: {
+'sans': ['Poppins', 'sans-serif'],
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.rainbow-border {
+position: relative;
+}
+.rainbow-border::after {
+content: '';
+position: absolute;
+bottom: -3px;
+left: 0;
+width: 100%;
+height: 3px;
+background: linear-gradient(to right, #e40303, #ff8c00, #ffed00, #008026, #004dff, #750787);
+}
+.booking-widget {
+background-color: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+}
+.event-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.rainbow-button {
+position: relative;
+z-index: 1;
+overflow: hidden;
+}
+.rainbow-button::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, #e40303, #ff8c00, #ffed00, #008026, #004dff, #750787);
+transition: left 0.3s ease;
+z-index: -1;
+}
+.rainbow-button:hover::before {
+left: 0;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+filter: invert(0.5);
+cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+height: 20px;
+width: 20px;
+background-color: white;
+border: 2px solid #ddd;
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #7C3AED;
+border-color: #7C3AED;
+}
+.checkmark:after {
+content: "";
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #7C3AED;
+}
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+</style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<a href="#" class="font-['Pacifico'] text-2xl text-primary mr-8">Madav Queer Restro</a>
+<nav class="hidden md:flex space-x-6">
+<a href="#" class="rainbow-border text-gray-800 font-medium hover:text-primary transition">Home</a>
+<a href="#events" class="text-gray-800 font-medium hover:text-primary transition">Events</a>
+<a href="#rooms" class="text-gray-800 font-medium hover:text-primary transition">Rooms</a>
+<a href="#dining" class="text-gray-800 font-medium hover:text-primary transition">Dining</a>
+<a href="#about" class="text-gray-800 font-medium hover:text-primary transition">About Us</a>
+<a href="#contact" class="text-gray-800 font-medium hover:text-primary transition">Contact</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-1">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-heart-3-fill text-primary"></i>
+</div>
+<span class="hidden md:inline text-sm font-medium">LGBTQ+ Friendly</span>
+</div>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Now</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-20 relative">
+<div class="w-full h-[600px] bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20luxurious%20hotel%20lobby%20with%20rainbow%20accents%2C%20warm%20lighting%2C%20elegant%20modern%20furniture%2C%20diverse%20groups%20of%20people%20socializing%2C%20pride%20flags%20subtly%20incorporated%20into%20the%20decor%2C%20high%20ceilings%20with%20crystal%20chandeliers%2C%20polished%20marble%20floors%2C%20and%20a%20welcoming%20atmosphere%20that%20combines%20sophistication%20with%20inclusivity&width=1600&height=800&seq=1&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+<div class="container mx-auto px-4 h-full flex items-center">
+<div class="max-w-2xl text-white relative z-10">
+<h1 class="text-5xl font-bold mb-4">Your Safe Space in Style</h1>
+<p class="text-xl mb-8">Experience luxury, inclusivity, and authentic hospitality at Madav Queer Restro, where everyone is celebrated and welcomed.</p>
+<div class="flex space-x-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Explore Rooms</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-100 transition whitespace-nowrap">View Events</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Booking Widget -->
+<div class="container mx-auto px-4 relative">
+<div class="booking-widget absolute -bottom-20 left-0 right-0 mx-auto p-6 rounded-lg shadow-xl max-w-5xl">
+<form class="grid grid-cols-1 md:grid-cols-5 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Check In</label>
+<div class="relative">
+<input type="date" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" value="2025-06-01">
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Check Out</label>
+<div class="relative">
+<input type="date" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" value="2025-06-03">
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Guests</label>
+<div class="relative">
+<select class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 pr-8 appearance-none">
+<option>1 Guest</option>
+<option selected>2 Guests</option>
+<option>3 Guests</option>
+<option>4+ Guests</option>
+</select>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Room Type</label>
+<div class="relative">
+<select class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 pr-8 appearance-none">
+<option>Any Room</option>
+<option>Deluxe Suite</option>
+<option>Pride Suite</option>
+<option>Couple's Retreat</option>
+</select>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-primary text-white p-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Search Rooms</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Featured Events Section -->
+<section id="events" class="pt-32 pb-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">Upcoming Events</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Join our vibrant community for exclusive events that celebrate diversity, love, and pride.</p>
+<!-- Event Categories -->
+<div class="flex flex-wrap justify-center mt-6 gap-2">
+<button class="px-6 py-2 !rounded-full bg-primary text-white font-medium whitespace-nowrap">All Events</button>
+<button class="px-6 py-2 !rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 whitespace-nowrap">Drag Shows</button>
+<button class="px-6 py-2 !rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 whitespace-nowrap">Pride Parties</button>
+<button class="px-6 py-2 !rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 whitespace-nowrap">Social Meetups</button>
+<button class="px-6 py-2 !rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 whitespace-nowrap">Workshops</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Event Card 1 -->
+<div class="event-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20glamorous%20drag%20show%20performance%20with%20colorful%20stage%20lighting%2C%20elegant%20performers%20in%20sequined%20outfits%2C%20an%20enthusiastic%20diverse%20audience%2C%20professional%20stage%20setup%20with%20rainbow%20lighting%20effects%2C%20champagne%20glasses%20on%20tables%2C%20and%20an%20atmosphere%20of%20celebration%20and%20joy&width=600&height=400&seq=2&orientation=landscape" alt="Pride Drag Night" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">Drag Show</span>
+</div>
+<div class="text-right">
+<p class="text-sm font-medium text-gray-900">June 5, 2025</p>
+<p class="text-xs text-gray-500">8:00 PM - 11:00 PM</p>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-2">Pride Drag Extravaganza</h3>
+<p class="text-gray-600 mb-4">Join us for a spectacular night of performances by award-winning drag artists celebrating pride month with glamour and style.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-medium">$25 per person</span>
+<button class="text-white bg-primary px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Tickets</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="event-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20rooftop%20pool%20party%20with%20diverse%20groups%20of%20people%20in%20swimwear%2C%20rainbow%20decorations%2C%20cocktails%2C%20DJ%20booth%20with%20colorful%20lighting%2C%20lounge%20chairs%2C%20cabanas%20with%20pride%20flags%2C%20city%20skyline%20view%2C%20and%20a%20festive%20atmosphere%20during%20sunset%20with%20warm%20golden%20lighting&width=600&height=400&seq=3&orientation=landscape" alt="Rooftop Pool Party" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Pride Party</span>
+</div>
+<div class="text-right">
+<p class="text-sm font-medium text-gray-900">June 12, 2025</p>
+<p class="text-xs text-gray-500">2:00 PM - 8:00 PM</p>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-2">Rooftop Rainbow Splash</h3>
+<p class="text-gray-600 mb-4">Our famous rooftop pool party returns with DJ Prism spinning the best tracks while you enjoy cocktails and stunning city views.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-medium">$40 per person</span>
+<button class="text-white bg-primary px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Tickets</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="event-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20wine%20tasting%20event%20with%20diverse%20couples%20and%20groups%2C%20elegant%20table%20settings%20with%20rainbow%20accents%2C%20sommelier%20presenting%20wines%2C%20charcuterie%20boards%2C%20soft%20ambient%20lighting%2C%20hotel%20restaurant%20setting%20with%20modern%20decor%2C%20and%20a%20warm%20inviting%20atmosphere%20of%20celebration&width=600&height=400&seq=4&orientation=landscape" alt="Wine & Dine Social" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<span class="inline-block px-3 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-full">Social Meetup</span>
+</div>
+<div class="text-right">
+<p class="text-sm font-medium text-gray-900">June 18, 2025</p>
+<p class="text-xs text-gray-500">7:00 PM - 10:00 PM</p>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-2">Wine & Dine Social</h3>
+<p class="text-gray-600 mb-4">An elegant evening of wine tasting, gourmet appetizers, and meaningful connections in our intimate restaurant setting.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-medium">$35 per person</span>
+<button class="text-white bg-primary px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="inline-flex items-center px-6 py-3 border-2 border-primary text-primary font-medium !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap">
+View All Events
+<div class="w-5 h-5 ml-2 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- Accommodation Showcase -->
+<section id="rooms" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">Luxurious Accommodations</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Experience comfort and style in our thoughtfully designed rooms and suites, each offering a unique atmosphere of inclusivity and elegance.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+<!-- Featured Room -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="h-80 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20hotel%20suite%20with%20a%20king-sized%20bed%2C%20elegant%20modern%20decor%20in%20neutral%20tones%20with%20subtle%20rainbow%20accents%2C%20floor-to-ceiling%20windows%20with%20city%20views%2C%20plush%20seating%20area%2C%20high-end%20amenities%2C%20mood%20lighting%2C%20champagne%20on%20ice%2C%20and%20fresh%20flowers%20creating%20a%20sophisticated%20and%20welcoming%20atmosphere&width=800&height=600&seq=5&orientation=landscape" alt="Pride Suite" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<h3 class="text-2xl font-bold">Pride Suite</h3>
+<div class="flex">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-4">Our signature suite features a king-sized bed, panoramic city views, luxury bathroom with rainfall shower, and a private balcony perfect for couples seeking an unforgettable stay.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-hotel-bed-line"></i>
+</div>
+<span class="text-sm">King Bed</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-group-line"></i>
+</div>
+<span class="text-sm">Up to 2 Guests</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-wifi-line"></i>
+</div>
+<span class="text-sm">Free Wi-Fi</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-goblet-line"></i>
+</div>
+<span class="text-sm">Complimentary Drinks</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-2xl font-bold text-primary">$299</span>
+<span class="text-gray-600"> / night</span>
+</div>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Room Features -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+<!-- Feature 1 -->
+<div class="bg-white rounded-lg p-6 shadow-md flex flex-col">
+<div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-primary rounded-full mb-4">
+<i class="ri-heart-3-line text-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Couple's Package</h3>
+<p class="text-gray-600 mb-4 flex-grow">Celebrate your love with our special package including champagne, chocolate-covered strawberries, and rose petal turndown service.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Learn More
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white rounded-lg p-6 shadow-md flex flex-col">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mb-4">
+<i class="ri-shield-check-line text-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Safe Space Promise</h3>
+<p class="text-gray-600 mb-4 flex-grow">Our staff is trained to provide respectful, inclusive service to ensure every guest feels welcome, valued, and protected.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Our Policy
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white rounded-lg p-6 shadow-md flex flex-col">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 text-primary rounded-full mb-4">
+<i class="ri-spa-line text-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Wellness Center</h3>
+<p class="text-gray-600 mb-4 flex-grow">Rejuvenate your body and mind with our spa services, fitness center, and rooftop yoga sessions with panoramic views.</p>
+<button class="text-primary font-medium inline-flex items-center">
+View Services
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white rounded-lg p-6 shadow-md flex flex-col">
+<div class="w-12 h-12 flex items-center justify-center bg-yellow-100 text-primary rounded-full mb-4">
+<i class="ri-gift-line text-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Pride Perks</h3>
+<p class="text-gray-600 mb-4 flex-grow">Book during pride month for special amenities, discounted event tickets, and exclusive access to our rooftop celebrations.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Special Offers
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Room Types -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Room Type 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20cozy%20hotel%20room%20with%20a%20queen%20bed%2C%20modern%20decor%20with%20subtle%20rainbow%20accents%2C%20warm%20lighting%2C%20city%20view%20from%20window%2C%20elegant%20bathroom%2C%20desk%20area%2C%20and%20stylish%20furnishings%20in%20a%20compact%20but%20luxurious%20space&width=600&height=400&seq=6&orientation=landscape" alt="Harmony Room" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5">
+<h3 class="text-xl font-bold mb-2">Harmony Room</h3>
+<div class="flex items-center mb-3">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-1 text-sm text-gray-600">4.8 (124 reviews)</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Cozy queen room with modern amenities, perfect for solo travelers or couples.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-lg font-bold text-primary">$189</span>
+<span class="text-gray-600 text-sm"> / night</span>
+</div>
+<button class="text-primary border border-primary px-4 py-1.5 !rounded-button text-sm font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+<!-- Room Type 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20spacious%20hotel%20suite%20with%20two%20queen%20beds%2C%20modern%20elegant%20decor%20with%20subtle%20rainbow%20accents%2C%20large%20windows%20with%20city%20views%2C%20sitting%20area%20with%20comfortable%20chairs%2C%20luxury%20bathroom%20with%20double%20sinks%2C%20and%20sophisticated%20lighting%20in%20a%20well-appointed%20space&width=600&height=400&seq=7&orientation=landscape" alt="Unity Suite" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5">
+<h3 class="text-xl font-bold mb-2">Unity Suite</h3>
+<div class="flex items-center mb-3">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-1 text-sm text-gray-600">4.9 (87 reviews)</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Spacious suite with two queen beds, ideal for friends or family traveling together.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-lg font-bold text-primary">$249</span>
+<span class="text-gray-600 text-sm"> / night</span>
+</div>
+<button class="text-primary border border-primary px-4 py-1.5 !rounded-button text-sm font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+<!-- Room Type 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20penthouse%20hotel%20suite%20with%20floor-to-ceiling%20windows%20offering%20panoramic%20city%20views%2C%20king%20bed%20with%20premium%20linens%2C%20elegant%20modern%20furniture%2C%20spacious%20living%20area%20with%20designer%20sofa%2C%20private%20terrace%20with%20lounge%20chairs%2C%20marble%20bathroom%20with%20jacuzzi%20tub%2C%20and%20subtle%20rainbow%20accents%20throughout%20the%20sophisticated%20space&width=600&height=400&seq=8&orientation=landscape" alt="Celebration Penthouse" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5">
+<h3 class="text-xl font-bold mb-2">Celebration Penthouse</h3>
+<div class="flex items-center mb-3">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-1 text-sm text-gray-600">5.0 (56 reviews)</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Our most luxurious offering with panoramic views, private terrace, and premium amenities.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-lg font-bold text-primary">$399</span>
+<span class="text-gray-600 text-sm"> / night</span>
+</div>
+<button class="text-primary border border-primary px-4 py-1.5 !rounded-button text-sm font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">View All Accommodations</button>
+</div>
+</div>
+</section>
+<!-- Restaurant & Bar Area -->
+<section id="dining" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">Dining & Entertainment</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Indulge in exceptional cuisine and signature cocktails at our restaurant and bar, where every meal is a celebration.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+<div>
+<h3 class="text-2xl font-bold mb-4">Spectrum Restaurant</h3>
+<p class="text-gray-600 mb-6">Our award-winning restaurant offers a diverse menu of international cuisine prepared with locally-sourced ingredients. Each dish is crafted with care by our talented chefs to provide a memorable dining experience.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-2">
+<h4 class="font-medium">Farm-to-Table Philosophy</h4>
+<p class="text-sm text-gray-600">Supporting local farmers and sustainable practices</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-2">
+<h4 class="font-medium">Inclusive Menu Options</h4>
+<p class="text-sm text-gray-600">Vegetarian, vegan, and gluten-free dishes available</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-2">
+<h4 class="font-medium">Signature Cocktail Program</h4>
+<p class="text-sm text-gray-600">Unique drinks inspired by LGBTQ+ icons and history</p>
+</div>
+</div>
+</div>
+<div class="flex space-x-4">
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Reserve a Table</button>
+<button class="border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition whitespace-nowrap">View Menu</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20restaurant%20dish%20with%20beautifully%20plated%20gourmet%20food%2C%20vibrant%20colors%2C%20artistic%20presentation%2C%20on%20a%20modern%20white%20plate%2C%20with%20subtle%20rainbow%20accent%20in%20the%20garnish%2C%20soft%20focus%20restaurant%20background%2C%20professional%20food%20photography%20lighting&width=400&height=400&seq=9&orientation=squarish" alt="Gourmet Dish" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20cocktail%20in%20an%20elegant%20glass%20with%20colorful%20garnish%2C%20subtle%20rainbow%20reflection%20in%20the%20glass%2C%20on%20a%20stylish%20bar%20counter%2C%20soft%20background%20lighting%2C%20professional%20beverage%20photography&width=400&height=400&seq=10&orientation=squarish" alt="Signature Cocktail" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20restaurant%20interior%20with%20modern%20decor%2C%20soft%20ambient%20lighting%2C%20stylish%20tables%20with%20subtle%20rainbow%20accents%20in%20the%20decor%2C%20comfortable%20seating%2C%20and%20a%20sophisticated%20atmosphere&width=400&height=400&seq=11&orientation=squarish" alt="Restaurant Interior" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20dessert%20plate%20with%20artistically%20presented%20gourmet%20dessert%2C%20colorful%20fruit%20garnish%20creating%20a%20subtle%20rainbow%20effect%2C%20chocolate%20decoration%2C%20on%20an%20elegant%20plate%2C%20with%20soft%20focus%20background&width=400&height=400&seq=12&orientation=squarish" alt="Dessert Plate" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+<!-- Themed Nights -->
+<div class="bg-white rounded-lg shadow-md p-8 mb-16">
+<h3 class="text-2xl font-bold mb-6">Themed Entertainment Nights</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Night 1 -->
+<div class="border border-gray-100 rounded-lg p-5 hover:shadow-md transition">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold">Karaoke Thursdays</h4>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Weekly</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Show off your vocal talents with our state-of-the-art karaoke system. Enjoy drink specials and prizes for the best performances.</p>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span>8:00 PM - 12:00 AM</span>
+</div>
+</div>
+<!-- Night 2 -->
+<div class="border border-gray-100 rounded-lg p-5 hover:shadow-md transition">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold">Drag Brunch Sundays</h4>
+<span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Weekly</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Join us for a fabulous brunch accompanied by spectacular performances from talented drag artists and unlimited mimosas.</p>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span>11:00 AM - 3:00 PM</span>
+</div>
+</div>
+<!-- Night 3 -->
+<div class="border border-gray-100 rounded-lg p-5 hover:shadow-md transition">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-lg font-bold">Jazz & Cocktails</h4>
+<span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">Fridays</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Unwind with smooth jazz performed by local LGBTQ+ musicians while sipping on expertly crafted cocktails in our elegant lounge.</p>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span>7:00 PM - 11:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Signature Cocktails -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="col-span-1 md:col-span-4 mb-2">
+<h3 class="text-2xl font-bold">Signature Pride Cocktails</h3>
+</div>
+<!-- Cocktail 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20vibrant%20red%20cocktail%20in%20a%20martini%20glass%20with%20a%20rainbow%20sugar%20rim%2C%20garnished%20with%20a%20twist%20of%20lemon%20peel%2C%20on%20an%20elegant%20bar%20counter%20with%20soft%20background%20lighting&width=400&height=300&seq=13&orientation=landscape" alt="Rainbow Martini" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-bold mb-1">Rainbow Martini</h4>
+<p class="text-sm text-gray-600 mb-3">Vodka, cranberry, lime, rainbow sugar rim</p>
+<span class="text-primary font-medium">$14</span>
+</div>
+</div>
+<!-- Cocktail 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20blue%20cocktail%20in%20a%20highball%20glass%20with%20layered%20colors%20creating%20an%20ombre%20effect%20from%20blue%20to%20purple%2C%20garnished%20with%20fresh%20berries%2C%20on%20an%20elegant%20bar%20counter%20with%20soft%20background%20lighting&width=400&height=300&seq=14&orientation=landscape" alt="Pride Punch" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-bold mb-1">Pride Punch</h4>
+<p class="text-sm text-gray-600 mb-3">Rum, blue curaçao, pineapple, coconut</p>
+<span class="text-primary font-medium">$15</span>
+</div>
+</div>
+<!-- Cocktail 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20golden%20cocktail%20in%20a%20whiskey%20glass%20with%20a%20large%20ice%20cube%2C%20garnished%20with%20an%20orange%20peel%20and%20cherry%2C%20on%20an%20elegant%20bar%20counter%20with%20soft%20background%20lighting&width=400&height=300&seq=15&orientation=landscape" alt="Equality Old Fashioned" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-bold mb-1">Equality Old Fashioned</h4>
+<p class="text-sm text-gray-600 mb-3">Bourbon, bitters, orange, cherry</p>
+<span class="text-primary font-medium">$16</span>
+</div>
+</div>
+<!-- Cocktail 4 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20pink%20cocktail%20in%20a%20coupe%20glass%20with%20a%20gradient%20effect%20from%20pink%20to%20clear%2C%20garnished%20with%20edible%20flowers%2C%20on%20an%20elegant%20bar%20counter%20with%20soft%20background%20lighting&width=400&height=300&seq=16&orientation=landscape" alt="Love is Love" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-bold mb-1">Love is Love</h4>
+<p class="text-sm text-gray-600 mb-3">Gin, elderflower, grapefruit, prosecco</p>
+<span class="text-primary font-medium">$15</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Section -->
+<section id="community" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">Our Community</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We're proud to be an active part of the LGBTQ+ community, supporting initiatives and creating safe spaces for everyone.</p>
+<div class="mt-12 bg-white rounded-lg shadow-md p-8">
+<h3 class="text-2xl font-bold mb-6">Pride Flags & Their Significance</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gradient-to-r from-red-500 via-yellow-400 to-violet-600 p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Pride Flag</h4>
+<p class="text-gray-600 text-sm">The rainbow flag represents the diversity and unity of the LGBTQ+ community. Each color symbolizes different aspects: life, healing, sunlight, nature, harmony, and spirit.</p>
+</div>
+</div>
+<div class="bg-gradient-to-r from-pink-400 via-white to-blue-400 p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Trans Pride Flag</h4>
+<p class="text-gray-600 text-sm">The transgender pride flag features blue, pink, and white stripes, representing traditional gender colors and non-binary identities, celebrating gender diversity and transition.</p>
+</div>
+</div>
+<div class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Bisexual Pride Flag</h4>
+<p class="text-gray-600 text-sm">The bisexual flag uses pink, purple, and blue to represent attraction to multiple genders, with purple symbolizing the blending of gender attractions.</p>
+</div>
+</div>
+<div class="bg-gradient-to-r from-yellow-400 via-white to-purple-600 to-black p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Non-binary Pride Flag</h4>
+<p class="text-gray-600 text-sm">The non-binary flag includes yellow, white, purple, and black stripes, representing gender outside the binary, gender multiplicity, and those who feel without gender.</p>
+</div>
+</div>
+<div class="bg-gradient-to-r from-green-500 via-white to-purple-600 p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Genderqueer Pride Flag</h4>
+<p class="text-gray-600 text-sm">The genderqueer flag uses lavender, white, and green to represent non-binary gender identities, androgyny, and gender expressions outside traditional norms.</p>
+</div>
+</div>
+<div class="bg-gradient-to-r from-black via-gray-500 to-purple-600 to-white p-0.5 rounded-lg">
+<div class="bg-white p-6 rounded-[7px] h-full">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-flag-2-fill text-xl"></i>
+</div>
+<h4 class="font-bold mb-2">Asexual Pride Flag</h4>
+<p class="text-gray-600 text-sm">The asexual flag features black, grey, white, and purple stripes, representing the asexual spectrum, including romantic relationships and community.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<p class="text-gray-600">At Madav Queer Restro, we proudly display and honor these flags as symbols of identity, unity, and respect for all members of our diverse community.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+<!-- Community News -->
+<div class="lg:col-span-2 bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-6">Community News & Updates</h3>
+<!-- News Item 1 -->
+<div class="mb-8 pb-8 border-b border-gray-100">
+<div class="flex justify-between items-start mb-3">
+<h4 class="text-xl font-bold">Pride Month Celebrations Announced</h4>
+<span class="text-sm text-gray-500">May 15, 2025</span>
+</div>
+<p class="text-gray-600 mb-4">We're excited to announce our full schedule of Pride Month events, including partnerships with local LGBTQ+ organizations, special performances, and community fundraisers.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Read More
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+<!-- News Item 2 -->
+<div class="mb-8 pb-8 border-b border-gray-100">
+<div class="flex justify-between items-start mb-3">
+<h4 class="text-xl font-bold">Madav Queer Restro Receives Inclusivity Award</h4>
+<span class="text-sm text-gray-500">April 28, 2025</span>
+</div>
+<p class="text-gray-600 mb-4">We're honored to have been recognized by the International Hospitality Association for our commitment to creating an inclusive environment for both guests and employees.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Read More
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+<!-- News Item 3 -->
+<div>
+<div class="flex justify-between items-start mb-3">
+<h4 class="text-xl font-bold">New Partnership with LGBTQ+ Youth Center</h4>
+<span class="text-sm text-gray-500">April 10, 2025</span>
+</div>
+<p class="text-gray-600 mb-4">We're proud to announce our new partnership with the Downtown LGBTQ+ Youth Center, providing employment opportunities, mentorship programs, and fundraising events.</p>
+<button class="text-primary font-medium inline-flex items-center">
+Read More
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-6">Guest Testimonials</h3>
+<!-- Testimonial 1 -->
+<div class="mb-8 pb-8 border-b border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-3">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20person%20with%20short%20dark%20hair%2C%20neutral%20background%2C%20warm%20friendly%20expression%2C%20professional%20attire&width=100&height=100&seq=17&orientation=squarish" alt="James Wilson" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">James Wilson</h4>
+<div class="flex">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-600 text-sm italic">"My husband and I felt truly welcomed from the moment we arrived. The staff was exceptional, the Pride Suite was stunning, and the events made our anniversary celebration unforgettable."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="mb-8 pb-8 border-b border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-3">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20person%20with%20long%20blonde%20hair%2C%20neutral%20background%2C%20warm%20friendly%20expression%2C%20professional%20attire&width=100&height=100&seq=18&orientation=squarish" alt="Sophia Chen" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">Sophia Chen</h4>
+<div class="flex">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-600 text-sm italic">"The Drag Brunch was the highlight of our weekend! Amazing performances, delicious food, and such a supportive atmosphere. We'll definitely be back for the next one."</p>
+</div>
+<!-- Testimonial 3 -->
+<div>
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-3">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20person%20with%20curly%20hair%2C%20neutral%20background%2C%20warm%20friendly%20expression%2C%20professional%20attire&width=100&height=100&seq=19&orientation=squarish" alt="Alex Rodriguez" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">Alex Rodriguez</h4>
+<div class="flex">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-600 text-sm italic">"As a non-binary person, I often worry about how I'll be treated at hotels. Madav Queer Restro was refreshingly inclusive - from the gender-neutral bathrooms to the staff who respected my pronouns."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Partners -->
+<div class="bg-white rounded-lg shadow-md p-8 mb-16">
+<h3 class="text-2xl font-bold mb-8 text-center">Our Community Partners</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Partner 1 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-heart-3-fill text-4xl"></i>
+</div>
+<h4 class="font-bold text-center mb-1">Pride Foundation</h4>
+<p class="text-sm text-gray-600 text-center">Supporting LGBTQ+ rights and advocacy</p>
+</div>
+<!-- Partner 2 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-home-heart-fill text-4xl"></i>
+</div>
+<h4 class="font-bold text-center mb-1">Rainbow Housing</h4>
+<p class="text-sm text-gray-600 text-center">Safe housing for LGBTQ+ youth</p>
+</div>
+<!-- Partner 3 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-mental-health-fill text-4xl"></i>
+</div>
+<h4 class="font-bold text-center mb-1">Queer Wellness</h4>
+<p class="text-sm text-gray-600 text-center">Mental health services for the community</p>
+</div>
+<!-- Partner 4 -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-graduation-cap-fill text-4xl"></i>
+</div>
+<h4 class="font-bold text-center mb-1">LGBTQ+ Education</h4>
+<p class="text-sm text-gray-600 text-center">Promoting awareness and understanding</p>
+</div>
+</div>
+</div>
+<!-- Safe Space Policy -->
+<div class="bg-gradient-to-r from-purple-600 to-primary rounded-lg shadow-md overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-8 text-white">
+<h3 class="text-2xl font-bold mb-4">Our Safe Space Commitment</h3>
+<p class="mb-6">At Madav Queer Restro, we are committed to creating an environment where all guests and staff feel safe, respected, and celebrated regardless of sexual orientation, gender identity, or expression.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-white bg-white/20 rounded-full mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-3">
+<h4 class="font-medium">Staff Training</h4>
+<p class="text-sm text-white/80">All staff undergo comprehensive diversity and inclusion training</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-white bg-white/20 rounded-full mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-3">
+<h4 class="font-medium">Zero Tolerance Policy</h4>
+<p class="text-sm text-white/80">Discrimination or harassment of any kind is not tolerated</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-white bg-white/20 rounded-full mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div class="ml-3">
+<h4 class="font-medium">Gender-Neutral Facilities</h4>
+<p class="text-sm text-white/80">Accessible restrooms and facilities for all guests</p>
+</div>
+</div>
+</div>
+<button class="bg-white text-primary px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Read Full Policy</button>
+</div>
+<div class="bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20diverse%20group%20of%20people%20at%20a%20pride%20celebration%2C%20rainbow%20flags%2C%20joyful%20expressions%2C%20hotel%20setting%20with%20elegant%20decor%2C%20warm%20lighting%2C%20and%20an%20atmosphere%20of%20celebration%20and%20acceptance&width=800&height=600&seq=20&orientation=portrait')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter & Contact -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Newsletter -->
+<div class="bg-white rounded-lg shadow-md p-8">
+<h3 class="text-2xl font-bold mb-4">Stay Connected</h3>
+<p class="text-gray-600 mb-6">Subscribe to our newsletter for exclusive offers, event updates, and community news.</p>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Your name">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="your@email.com">
+</div>
+<div class="space-y-3">
+<label class="block text-sm font-medium text-gray-700">I'm interested in:</label>
+<label class="custom-checkbox flex items-center">
+<input type="checkbox" checked>
+<span class="checkmark mr-2"></span>
+<span class="text-sm">Events & Entertainment</span>
+</label>
+<label class="custom-checkbox flex items-center">
+<input type="checkbox" checked>
+<span class="checkmark mr-2"></span>
+<span class="text-sm">Special Offers & Promotions</span>
+</label>
+<label class="custom-checkbox flex items-center">
+<input type="checkbox">
+<span class="checkmark mr-2"></span>
+<span class="text-sm">Community News & Updates</span>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center">
+<span class="text-sm mr-3">Email Format:</span>
+<label class="custom-switch">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+<span class="text-sm ml-2">HTML</span>
+</label>
+<button type="submit" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Subscribe</button>
+</div>
+</form>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-2xl font-bold mb-6">Contact Us</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-map-pin-line text-xl"></i>
+</div>
+<h4 class="text-lg font-bold mb-2">Location</h4>
+<p class="text-gray-600">123 Rainbow Avenue<br>San Francisco, CA 94103</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-phone-line text-xl"></i>
+</div>
+<h4 class="text-lg font-bold mb-2">Phone</h4>
+<p class="text-gray-600">+1 (415) 555-7890<br>+1 (415) 555-7891</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-mail-line text-xl"></i>
+</div>
+<h4 class="text-lg font-bold mb-2">Email</h4>
+<p class="text-gray-600">info@madavqueerrestro.com<br>events@madavqueerrestro.com</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+<i class="ri-time-line text-xl"></i>
+</div>
+<h4 class="text-lg font-bold mb-2">Hours</h4>
+<p class="text-gray-600">Check-in: 3:00 PM<br>Check-out: 11:00 AM<br>Restaurant: 7:00 AM - 11:00 PM</p>
+</div>
+</div>
+<!-- Map -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden h-64 relative">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get Directions</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Column 1 -->
+<div>
+<a href="#" class="font-['Pacifico'] text-2xl text-white mb-6 block">Madav Queer Restro</a>
+<p class="text-gray-400 mb-6">Your safe space in style. A luxury hotel and restaurant dedicated to celebrating diversity and providing exceptional experiences for the LGBTQ+ community and allies.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-tiktok-line"></i>
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+<li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+<li><a href="#rooms" class="text-gray-400 hover:text-white transition">Rooms</a></li>
+<li><a href="#dining" class="text-gray-400 hover:text-white transition">Dining</a></li>
+<li><a href="#community" class="text-gray-400 hover:text-white transition">Community</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Policies</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Safe Space Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Cancellation Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Accessibility Statement</a></li>
+</ul>
+</div>
+<!-- Column 4 -->
+<div>
+<h4 class="text-lg font-bold mb-6">We Accept</h4>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-visa-line text-xl"></i>
+</div>
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-mastercard-line text-xl"></i>
+</div>
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-paypal-line text-xl"></i>
+</div>
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-apple-fill text-xl"></i>
+</div>
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-google-fill text-xl"></i>
+</div>
+<div class="w-12 h-8 flex items-center justify-center bg-gray-800 rounded">
+<i class="ri-amazon-fill text-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-bold mb-4">Certifications</h4>
+<div class="flex flex-wrap gap-2">
+<div class="px-3 py-1 bg-gray-800 rounded-full text-xs">LGBTQ+ Certified</div>
+<div class="px-3 py-1 bg-gray-800 rounded-full text-xs">TAG Approved</div>
+<div class="px-3 py-1 bg-gray-800 rounded-full text-xs">Pride 365</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+<p>&copy; 2025 Madav Queer Restro. All rights reserved.</p>
+<div class="flex justify-center mt-4 space-x-6">
+<a href="#" class="hover:text-gray-300">Privacy</a>
+<a href="#" class="hover:text-gray-300">Terms</a>
+<a href="#" class="hover:text-gray-300">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Menu (Hidden by default) -->
+<div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu-overlay">
+<div class="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-xl p-6">
+<div class="flex justify-between items-center mb-8">
+<a href="#" class="font-['Pacifico'] text-xl text-primary">Madav</a>
+<button id="close-mobile-menu" class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line text-xl"></i>
+</button>
+</div>
+<nav class="space-y-4">
+<a href="#" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Home</a>
+<a href="#events" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Events</a>
+<a href="#rooms" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Rooms</a>
+<a href="#dining" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Dining</a>
+<a href="#about" class="block py-2 text-gray-800 font-medium border-b border-gray-100">About Us</a>
+<a href="#contact" class="block py-2 text-gray-800 font-medium">Contact</a>
+</nav>
+<div class="mt-8">
+<button class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.querySelector('.md\\:hidden');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+const closeButton = document.getElementById('close-mobile-menu');
+if (mobileMenuButton && mobileMenuOverlay && closeButton) {
+mobileMenuButton.addEventListener('click', function() {
+mobileMenuOverlay.classList.remove('hidden');
+});
+closeButton.addEventListener('click', function() {
+mobileMenuOverlay.classList.add('hidden');
+});
+// Close menu when clicking on menu items
+const menuItems = mobileMenuOverlay.querySelectorAll('nav a');
+menuItems.forEach(item => {
+item.addEventListener('click', function() {
+mobileMenuOverlay.classList.add('hidden');
+});
+});
+}
+});
+</script>
+<script id="checkbox-script">
+document.addEventListener('DOMContentLoaded', function() {
+const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+customCheckboxes.forEach(checkbox => {
+checkbox.addEventListener('click', function() {
+const input = this.querySelector('input[type="checkbox"]');
+input.checked = !input.checked;
+});
+});
+});
+</script>
+<script id="sticky-header-script">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.querySelector('header');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.add('shadow-lg');
+} else {
+header.classList.remove('shadow-lg');
+}
+});
+});
+</script>
+</body>
+</html>
